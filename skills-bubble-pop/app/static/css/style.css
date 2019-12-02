@@ -1,0 +1,12 @@
+#chart {
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+h1, h2 {
+	margin: 0.5em 0;
+}
+
+.node:hover {
+	cursor: pointer;
+}

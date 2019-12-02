@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+		<title>Skills Bubble Pop Prototype</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Skills Bubble Pop!</h1>
+					<p>This tool shows you how many times specific tools or skills have been mentioned in Tweets by Yorkshire tech businesses in the past week.</p>
+					<p>We want to develop a complete dashboard for digital skills and training in Yorkshire. If you have data related to the skills employers need, job openings, career pathways or training opportunities in the region, we would love you to share it!</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<select id="skillsCat" class="browser-default custom-select">
+						  <option selected>Select a skills category</option>
+						  {% for keyword in keywords %}
+						  <option value="{{ keyword }}">{{ keyword }}</option>
+						  {% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>{{ cat }} tools mentioned by businesses in Yorkshire</h2>
+					<div id="chart" data-cat="{{ cat }}"></div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src={{ url_for('static', filename='js/custom.js') }}></script>
+	</body>
+</html>

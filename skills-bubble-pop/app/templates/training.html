@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+		<title>Skills Bubble Pop Prototype</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Training &amp; employment opportunities related to {{ tool }}</h1>
+					<p>Here are a list of training opportunities related to {{ tool }} in the Yorkshire region.</p>
+					<ul>
+						{% for url in urls %}
+						<li><a href="{{ url }}">{{ url }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</body>
+</html>
